@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>baker</title>
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <style>
+        body{
+            background-color: #f3ece5;
+            font-size: 16px;
+            font-family: "宋体";
+        }
+        .navbar{
+            min-height: 30px;
+        }
+        .navbar-toggle{
+            float: none;
+        }
+        .navbar-nav{
+            float: none;
+        }
+        .navbar-default {
+            background-color: #7a5e53;
+        }
+        .navbar-default .navbar-nav > .active > a,
+        .navbar-default .navbar-nav > .active > a:focus,
+        .navbar-default .navbar-nav > .active > a:hover{
+            color: #fff;
+            background-color: #7a5e53;
+        }
+        .navbar-default .navbar-nav > li > a:hover{
+            color: #fff;
+        }
+        .navbar-default .navbar-nav > li > a{
+            color: #373737;
+        }
+        .nav > li{
+            width: 25%;
+            margin: 0 auto;
+        }
+        .nav > li > a{
+            font-size: 1.5em;
+        }
+        .panel-none{
+            border: none;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            background-color: #f3ece5;
+        }
+        .panel-default > .panel-heading{
+            background-color: #f3ece5;
+            border: none;
+            text-align: center;
+        }
+        #sale div{
+            text-align: center;
+        }
+        #sale div img{
+            width: 80%;
+        }
+        #sale1,#sale2,#sale3,#pro1,#pro2,#pro3{
+            background:rgba(27, 27, 27, 0.8) none repeat scroll 0 0 !important;
+            padding:15% 5%;
+            position: absolute;
+            display: none;
+        }
+        #sale1 p,#sale2 p,#sale3 p,#pro1 p,#pro2 p,#pro3 p{
+            position: relative;
+            color: #fff;
+            line-height: 100%;
+            filter:alpha(opacity=0);
+            opacity: 0;
+        }
+        #sale1 p span:first-child,#sale2 p span:first-child,#sale3 p span:first-child{
+            color: #535353;
+        }
+        #sale1 p span:last-child,#sale2 p span:last-child,#sale3 p span:last-child,#pro1 p span,#pro2 p span,#pro3 p span{
+            font-size: 150%;
+            color: #ec6941;
+        }
+        .sale_xs p {
+            position: relative;
+            color: #000;
+            line-height: 100%;
+        }
+        .sale_xs p span:first-child{
+            color: #535353;
+        }
+        .sale_xs p span:last-child{
+            font-size: 150%;
+            color: #ec6941;
+        }
+        #starProduct div{
+            text-align: center;
+        }
+        #starProduct div img{
+            width: 80%;
+        }
+        #chef img:first-child{
+            position: absolute;
+            bottom: 2em;
+            left: -5em;
+            width: 25%;
+        }
+        #chef img:last-child{
+            position: absolute;
+            bottom: 0;
+            right: -5em;
+            width: 30%;
+        }
+        #logo div{
+            padding: 3.75em 0 1.5em 0;
+        }
+        #process div{
+            text-align: center;
+        }
+        #process img{
+            width: 90%;
+        }
+        #process p{
+            font-size: 1.5em;
+            color: #3c180c;
+            line-height: 250%;
+        }
+        #footer div{
+            text-align: center;
+        }
+        @media screen and (max-width: 767px) {
+            #logo div{
+                padding: 1.5em 0 1em 0;
+            }
+            .nav>li{
+                width: 100%;
+            }
+            #sale div img{
+                width: 100%;
+            }
+            #starProduct div img{
+                width: 100%;
+            }
+        }
+        @media screen and (max-width: 640px){
+            body{
+                font-size: 1em;
+            }
+        }
+        @media screen and (max-width: 1200px){
+            #chefHeader{
+                width: 40%;
+            }
+            #chef img:first-child{
+                bottom: 6em;
+                left: 1em;
+                width: 20%;
+            }
+            #chef img:last-child{
+                right: 0em;
+                width: 25%;
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="header" class="container">
+    <div id="logo" class="row">
+        <div class="col-sm-10 col-xs-10 col-sm-offset-1 col-xs-offset-1">
+            <img src="images/logo.png" style="width: 100%;">
+        </div>
+    </div>
+</div>
+<div class="container" style="width: 100%;">
+    <div class="row">
+        <div class="col-sm-12 col-xs-12">
+            <div class="navbar navbar-default" style="margin-left: -15px;margin-right: -15px;">
+                <div class="navbar-header" style="text-align: center;">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse navbar-responsive-collapse" >
+                    <ul class="nav navbar-nav" style="margin: 0 auto;width:60%;text-align: center;">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li><a href="#">Sale</a></li>
+                        <li><a href="#">Star Product</a></li>
+                        <li><a href="#">Chef Baker</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br/>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-10 col-lg-offset-1">
+            <div class="panel panel-default panel-none">
+                <div class="panel-heading">
+                    <img src="images/sale.png" style="width: 40%;">
+                </div>
+                <div id="sale" class="panel-body">
+                    <div class="col-sm-4 col-xs-4">
+                        <img class="img-circle" src="images/sale1.jpg" style="position: relative;">
+                        <div id="sale1" class="hidden-xs">
+                            <p>xxx Bread</p>
+                            <p><span>$4</span>&nbsp;<span>$2</span></p>
+                            <p>Flaver:sweet</p>
+                            <p>Ingredient:egg flour butter</p>
+                        </div>
+                        <div class="sale_xs visible-xs">
+                            <p>xxx Bread</p>
+                            <p><span>$4</span>&nbsp;<span>$2</span></p>
+                            <p>Flaver:sweet</p>
+                            <p>Ingredient:egg flour butter</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-xs-4">
+                        <img class="img-circle" src="images/sale2.jpg" style="position: relative;">
+                        <div id="sale2" class="hidden-xs">
+                            <p>xxx Bread</p>
+                            <p><span>$4</span>&nbsp;<span>$2</span></p>
+                            <p>Flaver:sweet</p>
+                            <p>Ingredient:egg flour butter</p>
+                        </div>
+                        <div class="sale_xs visible-xs">
+                            <p>xxx Bread</p>
+                            <p><span>$4</span>&nbsp;<span>$2</span></p>
+                            <p>Flaver:sweet</p>
+                            <p>Ingredient:egg flour butter</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-xs-4">
+                        <img class="img-circle" src="images/sale3.jpg" style="position: relative;">
+                        <div id="sale3" class="hidden-xs">
+                            <p>xxx Bread</p>
+                            <p><span>$4</span>&nbsp;<span>$2</span></p>
+                            <p>Flaver:sweet</p>
+                            <p>Ingredient:egg flour butter</p>
+                        </div>
+                        <div class="sale_xs visible-xs">
+                            <p>xxx Bread</p>
+                            <p><span>$4</span>&nbsp;<span>$2</span></p>
+                            <p>Flaver:sweet</p>
+                            <p>Ingredient:egg flour butter</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-10 col-lg-offset-1">
+            <div class="panel panel-default panel-none">
+                <div class="panel-heading">
+                    <img src="images/star-product.png" style="width: 40%;">
+                </div>
+                <div id="starProduct" class="panel-body">
+                    <div class="col-sm-4 col-xs-4">
+                        <img class="img-circle" src="images/product1.jpg">
+                        <div id="pro1" class="hidden-xs">
+                            <p>xxx Bread</p>
+                            <p><span>$4</span></p>
+                            <p>Flaver:sweet</p>
+                            <p>Ingredient:egg flour butter</p>
+                        </div>
+                        <div class="sale_xs visible-xs">
+                            <p>xxx Bread</p>
+                            <p><span>$4</span></p>
+                            <p>Flaver:sweet</p>
+                            <p>Ingredient:egg flour butter</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-xs-4">
+                        <img class="img-circle" src="images/product2.jpg">
+                        <div id="pro2" class="hidden-xs">
+                            <p>xxx Bread</p>
+                            <p><span>$4</span></p>
+                            <p>Flaver:sweet</p>
+                            <p>Ingredient:egg flour butter</p>
+                        </div>
+                        <div class="sale_xs visible-xs">
+                            <p>xxx Bread</p>
+                            <p><span>$4</span></p>
+                            <p>Flaver:sweet</p>
+                            <p>Ingredient:egg flour butter</p>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-xs-4">
+                        <img class="img-circle" src="images/product3.jpg">
+                        <div id="pro3" class="hidden-xs">
+                            <p>xxx Bread</p>
+                            <p><span>$4</span></p>
+                            <p>Flaver:sweet</p>
+                            <p>Ingredient:egg flour butter</p>
+                        </div>
+                        <div class="sale_xs visible-xs">
+                            <p>xxx Bread</p>
+                            <p><span>$4</span></p>
+                            <p>Flaver:sweet</p>
+                            <p>Ingredient:egg flour butter</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container" style="width: 100%;">
+    <div class="row" style="background-color: #838379;">
+        <div class="col-lg-10 col-lg-offset-1">
+            <div class="panel panel-default panel-none" style="background-color: #838379;padding-top: 2em;">
+                <div class="panel-heading" style="background-color: #838379;text-align: center;">
+                    <img id="chefHeader" src="images/star-chef_.png" style="width: 32%;">
+                </div>
+                <div id="chef" class="panel-body">
+                    <img class="hidden-sm hidden-xs" src="images/bread.png">
+                    <div class="col-md-6 col-md-offset-3" style="color: #fff;font-size: 1.5em;padding-top: 2em;">
+                        <p class="text-justify">NAME:Jessie B. Fairbanks<br><br>EXPERIENCE:12+ years of baking experience in one of a famous bakery setting</p>
+                    </div>
+                    <img class="hidden-sm hidden-xs" src="images/chef.png">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-10 col-sm-offset-1">
+            <div class="panel panel-default panel-none">
+                <div class="panel-heading">
+                    <img src="images/process.png" style="width: 40%;padding-top: 2em;padding-bottom: 1em;">
+                </div>
+                <div id="process" class="panel-body">
+                    <div class="col-sm-6 col-xs-12">
+                        <img src="images/process1.jpg">
+                        <p class="text-center">Material</p>
+                    </div>
+                    <div class="col-sm-6 col-xs-12">
+                        <img src="images/process2.jpg">
+                        <p class="text-center">Fermentation</p>
+                    </div>
+                    <div class="col-sm-6 col-xs-12">
+                        <img src="images/process3.jpg">
+                        <p class="text-center">Bake</p>
+                    </div>
+                    <div class="col-sm-6 col-xs-12">
+                        <img src="images/process4.jpg">
+                        <p class="text-center">Complete</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-10 col-sm-offset-1">
+            <div class="panel panel-default panel-none">
+                <div class="panel-heading">
+                    <img src="images/pattern_bottom.png" style="width: 100%;">
+                </div>
+                <div id="footer" class="panel-body">
+                    <div class="col-lg-4">
+                        <p>ADD:xxxx xxxx xxxx xx</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <p>TEL:027-3938574</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <p>E-MAIL:mrrabbbit@yahoo.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="move.js"></script>
+<script>
+    var Sale=document.getElementById("sale");
+    var imgs=Sale.getElementsByTagName("img");
+    var sale1=document.getElementById("sale1");
+    var sale2=document.getElementById("sale2");
+    var sale3=document.getElementById("sale3");
+    sale1.style.left=sale2.style.left=sale3.style.left=imgs[0].offsetLeft+'px';
+    sale1.style.top=sale2.style.top=sale3.style.top=imgs[0].offsetTop+'px';
+    sale1.style.width=sale2.style.width=sale3.style.width=imgs[0].offsetWidth+'px';
+    sale1.style.height=sale2.style.height=sale3.style.height=imgs[0].offsetHeight+'px';
+    sale1.style.borderRadius=sale2.style.borderRadius=sale3.style.borderRadius=imgs[0].offsetWidth/2+'px';
+    var ps1=sale1.getElementsByTagName("p");
+    imgs[0].onmouseover=function(){
+        sale1.style.display="block";
+        for(var i=0;i<ps1.length;i++)
+        {
+            startMove(ps1[i],{opacity:100},0.2);
+        }
+    }
+    sale1.onmouseout=function(){
+        for(var i=0;i<ps1.length;i++)
+        {
+            startMove(ps1[i],{opacity:0},0.2);
+        }
+        sale1.style.display="none";
+    }
+
+    var ps2=sale2.getElementsByTagName("p");
+    imgs[1].onmouseover=function(){
+        sale2.style.display="block";
+        for(var i=0;i<ps2.length;i++)
+        {
+            startMove(ps2[i],{opacity:100},0.2);
+        }
+    }
+    sale2.onmouseout=function(){
+        for(var i=0;i<ps2.length;i++)
+        {
+            startMove(ps2[i],{opacity:0},0.2);
+        }
+        sale2.style.display="none";
+    }
+
+    var ps3=sale3.getElementsByTagName("p");
+    imgs[2].onmouseover=function(){
+        sale3.style.display="block";
+        for(var i=0;i<ps3.length;i++)
+        {
+            startMove(ps3[i],{opacity:100},0.2);
+        }
+    }
+    sale3.onmouseout=function(){
+        for(var i=0;i<ps3.length;i++)
+        {
+            startMove(ps3[i],{opacity:0},0.2);
+        }
+        sale3.style.display="none";
+    }
+
+    var Star=document.getElementById("starProduct");
+    var Imgs=Star.getElementsByTagName("img");
+    var pro1=document.getElementById("pro1");
+    var pro2=document.getElementById("pro2");
+    var pro3=document.getElementById("pro3");
+    pro1.style.left=pro2.style.left=pro3.style.left=Imgs[0].offsetLeft+'px';
+    pro1.style.top=pro2.style.top=pro3.style.top=Imgs[0].offsetTop+'px';
+    pro1.style.width=pro2.style.width=pro3.style.width=Imgs[0].offsetWidth+'px';
+    pro1.style.height=pro2.style.height=pro3.style.height=Imgs[0].offsetHeight+'px';
+    pro1.style.borderRadius=pro2.style.borderRadius=pro3.style.borderRadius=Imgs[0].offsetWidth/2+'px';
+    var pr1=pro1.getElementsByTagName("p");
+    Imgs[0].onmouseover=function(){
+        pro1.style.display="block";
+        for(var i=0;i<pr1.length;i++)
+        {
+            startMove(pr1[i],{opacity:100},0.2);
+        }
+    }
+    pro1.onmouseout=function(){
+        for(var i=0;i<pr1.length;i++)
+        {
+            startMove(pr1[i],{opacity:0},0.2);
+        }
+        pro1.style.display="none";
+    }
+
+    var pr2=pro2.getElementsByTagName("p");
+    Imgs[1].onmouseover=function(){
+        pro2.style.display="block";
+        for(var i=0;i<pr2.length;i++)
+        {
+            startMove(pr2[i],{opacity:100},0.2);
+        }
+    }
+    pro2.onmouseout=function(){
+        for(var i=0;i<pr2.length;i++)
+        {
+            startMove(pr2[i],{opacity:0},0.2);
+        }
+        pro2.style.display="none";
+    }
+
+    var pr3=pro3.getElementsByTagName("p");
+    Imgs[2].onmouseover=function(){
+        pro3.style.display="block";
+        for(var i=0;i<pr3.length;i++)
+        {
+            startMove(pr3[i],{opacity:100},0.2);
+        }
+    }
+    pro3.onmouseout=function(){
+        for(var i=0;i<pr3.length;i++)
+        {
+            startMove(pr3[i],{opacity:0},0.2);
+        }
+        pro3.style.display="none";
+    }
+
+    var process=document.getElementById("process");
+    var processImgs=process.getElementsByTagName("img");
+    for(var j=0;j<processImgs.length-1;j++)
+    {
+        processImgs[j].style.height=processImgs[3].offsetHeight+'px';
+    }
+</script>
+</body>
+</html>
